@@ -1,0 +1,275 @@
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #f5f5f5;
+  --accent-color: #d4af37;
+  --text-color: #333;
+  --border-color: #ccc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.admin-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.dashboard-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+.button {
+  font-family: 'Roboto Slab', serif;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.user-form {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 600px;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
+  transform: translateY(20px);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-form input, .user-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.user-form input:focus, .user-form select:focus {
+  border-color: #ff5a5f; /* Coral border on focus */
+  outline: none;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.user-table th, .user-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.user-table th {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.user-table tr {
+  transition: background-color var(--transition);
+}
+
+.user-table tr:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button, .delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition);
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.edit-button:hover, .delete-button:hover {
+  transform: scale(1.1);
+  color: var(--accent-color);
+}
+
+.edit-button::before, .delete-button::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.edit-button::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231a1a1a'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'/%3E%3C/svg%3E");
+}
+
+.delete-button::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231a1a1a'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16'/%3E%3C/svg%3E");
+}
+
+.confirmation-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--secondary-color);
+  padding: 2rem;
+  border: 2px solid var(--border-color);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.confirmation-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.confirmation-modal h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-family: 'Playfair Display', serif;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.confirm-button, .cancel-button {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.confirm-button:hover, .cancel-button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .user-table {
+    font-size: 0.875rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

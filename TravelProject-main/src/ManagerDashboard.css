@@ -1,0 +1,99 @@
+.container {
+  font-family: 'Roboto', sans-serif; /* Use a modern font */
+  padding: 40px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+th {
+  background-color: #343a40; /* Darker, more sophisticated header color */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa; /* Softer, more modern even row color */
+}
+
+tr:hover {
+  background-color: #e2e6ea; /* Subtle hover effect */
+}
+
+button {
+  background-color: #6c757d; /* Neutral button color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  font-weight: 500;
+}
+
+button.approve-button {
+  background-color: #28a745; /* Green for approve */
+}
+
+button.approve-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+button.reject-button {
+  background-color: #dc3545; /* Red for reject */
+}
+
+button.reject-button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Add some general styles for a modern look */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e9ecef; /* Light background */
+  color: #212529;
+}
+
+h2 {
+  color: #343a40; /* Match header color to table header */
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+/* Add some padding and style to buttons */
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Add a focus ring for accessibility */
+}

@@ -1,0 +1,184 @@
+/* src/App.css */
+
+/* Existing styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background: url('/public/assets/img1.jpg') no-repeat center center fixed;  */
+  background-size: cover;
+  color: rgb(23, 18, 18);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 70px; /* Add space for fixed Navbar */
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  /* background-image: url('/public/assets/img6.jpg'); Ensure this path is correct */
+  background-size: cover;
+  background-position: center;
+}
+
+
+.home-container:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(251 113 133); /* Sunlit Gold */
+  transition: transform 0.6s ease-in-out, color 0.3s;
+}
+
+.welcome-title:hover {
+  transform: scale(1.1);
+  color: rgb(65, 65, 214); /* Darker Gold */
+}
+
+.travel-description {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.6;
+  padding: 0 15px;
+}
+
+.home-links {
+  margin-top: 30px;
+}
+
+.home-link {
+  display: inline-block;
+  margin: 10px 20px;
+  padding: 15px 25px;
+  color: white;
+  background-color: #228B22; /* Forest Green */
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.home-link:hover {
+  background-color: #1e7d1e; /* Darker Forest Green */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px); /* Adjust for Navbar height */
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.error-page:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.error-page h1 {
+  font-size: 5rem;
+  color: #dc3545;
+  transition: color 0.3s;
+}
+
+.error-page p {
+  font-size: 1.8rem;
+}
+
+.error-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  color: white;
+  background-color: rgb(251 113 133); /* Slate Gray */
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.error-link:hover {
+  background-color: rgb(251 113 133); /* Slightly darker Slate Gray */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgb(237, 121, 138);
+}
+
+/* Updated Navbar styles */
+.navbar {
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: rgb(17, 17, 17); /* Slate Gray */
+  color: rgb(11, 9, 9);
+  height: 70px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff; /* Sunlit Gold */
+}
+
+.navbar-title:hover {
+  color: #e8e7ef; /* Light Blue */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #ecf0f1; /* Misty Blue */
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #34495e; /* Slightly darker Slate Gray */
+  color: #F0F8FF; /* Light Blue */
+  transform: translateY(-2px);
+}
+/* .bg{
+ 
+} */
+
+.navbar-center {
+  flex-grow: 1;
+  text-align: left; /* Align title to the left */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
